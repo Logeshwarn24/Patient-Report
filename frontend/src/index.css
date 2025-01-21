@@ -1,0 +1,1311 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Global Layout */
+:root {
+  --primary: #4CAF50; /* A more calming green */
+  --secondary: #607D8B; /* A neutral shade for text */
+  --background: #f9f9f9; /* Light background */
+  --error: #FF5733; /* Bright red for errors */
+  --border-color: #e0e0e0; /* Light border for form elements */
+  --shadow: rgba(0, 0, 0, 0.1); /* Subtle shadows */
+}
+
+body {
+  background: var(--background);
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--secondary);
+  line-height: 1.6;
+  background-image: url(C:\Users\LOGESHWARAN\Desktop\Patient\frontend\public\medical-character-vector-illustration-doctor-260nw-1714882885.webp);
+}
+
+header {
+  background: #fff;
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.pages {
+  max-width: 1200px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* Patient Details Section */
+.Patient-details {
+  background: #fff;
+  border-radius: 8px;
+  margin: 20px;
+  padding: 25px;
+  position: relative;
+  width: 150px;
+  box-shadow: 0 4px 15px var(--shadow);
+  transition: transform 0.3s ease-in-out;
+  
+}
+
+.Patient-details:hover {
+  transform: translateY(-5px); /* Subtle hover effect */
+}
+
+.Patient-details h4 {
+  margin: 0;
+  font-size: 1.2em;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.Patient-details p {
+  margin: 10px 0;
+  font-size: 1em;
+  color: var(--secondary);
+}
+
+.Patient-details span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 8px;
+  border-radius: 50%;
+  color: #333;
+  transition: background 0.3s ease;
+}
+
+.Patient-details span:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* New Patient Form */
+label {
+  font-size: 1.1em;
+  margin-bottom: 5px;
+  color: var(--primary);
+}
+
+input {
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+form button {
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  padding: 12px 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #388e3c;
+}
+
+div.error {
+  padding: 10px;
+  background: #ffe6e6;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 6px;
+  margin: 20px 0;
+}
+
+input.error {
+  border: 1px solid var(--error);
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+nav button {
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 1em;
+  margin-left: 10px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav button:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Auth Forms */
+form.signup, form.login {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+form.signup input, form.login input {
+  margin-bottom: 25px;
+}
+
+form.signup button, form.login button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+section {
+  margin: 30px 0;
+}
+.Patients{
+  
+  display: flex;
+  flex-wrap: wrap;
+}
+.create{
+  width: 1000px;
+}
+/* Gender Dropdown Styling */
+label {
+  display: block;
+  font-size: 1em;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #f9f9f9;
+  box-sizing: border-box;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+/* Focus effect */
+select:focus {
+  border-color: #1aac83;
+  outline: none;
+  background-color: #fff;
+}
+
+/* Error state */
+select.error {
+  border-color: #e7195a;
+  background-color: #ffefef;
+}
+
+/* Option styling */
+option {
+  font-size: 1em;
+  padding: 12px;
+  color: #333;
+  background-color: #fff;
+}
+
+select.error option {
+  background-color: #ffefef;
+}
+/* Container for both charts */
+.charts-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap; /* Allow charts to stack on smaller screens */
+  margin: 30px 0;
+}
+
+/* Individual chart wrapper */
+.chart {
+  width: 48%; /* Each chart takes up 48% of the container */
+  min-width: 300px; /* Ensure charts are not too small on smaller screens */
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.chart h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.chart canvas {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .charts-container {
+    flex-direction: column;
+  }
+
+  .chart {
+    width: 100%;
+  }
+}
+/* Container for the Chart */
+.chart-container {
+  width: 100%;
+  max-width: 600px; /* You can adjust the width */
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Title of the Chart */
+.chart-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Styling for the Chart itself */
+.chart-container canvas {
+  background-color: #fff; /* Background color of the chart */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tooltip Styling */
+.chartjs-tooltip {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Optional: Customizing Chart Legend */
+.chartjs-legend {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+/* Patient Details Section */
+.Patients {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Add space between patient cards */
+  justify-content: flex-start; /* Align to the left on larger screens */
+  margin: 20px auto;
+}
+
+.Patient-details {
+  background: #fff;
+  border-radius: 8px;
+  margin: 10px; /* Add some space between patient cards */
+  padding: 20px;
+  position: relative;
+  flex: 1 1 300px; /* Allow the card to grow, with a minimum of 300px width */
+  box-shadow: 0 4px 15px var(--shadow);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+  max-width: 350px; /* Limit maximum width to prevent cards from becoming too wide */
+}
+
+.Patient-details:hover {
+  transform: translateY(-5px); /* Subtle hover effect */
+  box-shadow: 0 8px 20px var(--shadow); /* Enhanced shadow effect on hover */
+}
+
+.Patient-details h4 {
+  margin: 0;
+  font-size: 1.4em; /* Slightly larger font size */
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.Patient-details p {
+  margin: 8px 0;
+  font-size: 1em;
+  color: var(--secondary);
+  line-height: 1.5;
+}
+
+.Patient-details span {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 8px;
+  border-radius: 50%;
+  color: #333;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.Patient-details span:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.Patient-details .delete-btn,
+.Patient-details .edit-btn {
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+}
+
+.Patient-details .delete-btn:hover,
+.Patient-details .edit-btn:hover {
+  background: #388e3c;
+  transform: scale(1.05);
+}
+
+.Patient-details .delete-btn {
+  margin-top: 15px;
+  background: #e74c3c;
+}
+
+.Patient-details .edit-btn {
+  margin-top: 10px;
+  background: #3498db;
+}
+
+/* For smaller screens, cards will stack vertically */
+@media (max-width: 768px) {
+  .Patients {
+    justify-content: center; /* Center cards on smaller screens */
+  }
+
+  .Patient-details {
+    flex: 1 1 100%; /* Make each card take up full width */
+    max-width: 100%;
+  }
+}
+
+/* Container for Create Form */
+.create-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height to vertically center */
+  padding: 20px;
+  background-color: var(--background);
+}
+
+.create-form {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px var(--shadow);
+  padding: 30px;
+  max-width: 500px; /* Limit form width */
+  width: 100%; /* Form takes up full width up to the max-width */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Add some space between form elements */
+}
+
+.create-form h2 {
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.create-form label {
+  font-size: 1.1em;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.create-form input,
+.create-form select {
+  padding: 12px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+.create-form input:focus,
+.create-form select:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.create-form button {
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 1.2em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  border: none;
+  text-align: center;
+}
+
+.create-form button:hover {
+  background: #388e3c;
+  transform: scale(1.05);
+}
+
+/* Error Message Styling */
+.create-form .error {
+  background-color: #ffe6e6;
+  color: var(--error);
+  border: 1px solid var(--error);
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .create-form-container {
+    padding: 10px; /* Less padding on smaller screens */
+  }
+
+  .create-form {
+    padding: 20px;
+  }
+
+  .create-form h2 {
+    font-size: 1.6em; /* Adjust heading size */
+  }
+}
+nav form {
+  display: inline-flex;
+  align-items: center;
+}
+
+nav form input {
+  padding: 8px;
+  font-size: 1rem;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+nav form button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+nav form button:hover {
+  background-color: #388e3c;
+}
+/* PatientsSearchPage styling */
+.patients-search-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-input {
+  width: 80%;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.search-button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #45a049;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+.patient-results {
+  margin-top: 20px;
+}
+/* Global or parent container style */
+.patient-container {
+  display: flex;
+  flex-wrap: wrap; /* Ensures items wrap to the next line if needed */
+  justify-content: space-around; /* Distributes items with space between */
+  gap: 20px; /* Adds spacing between items */
+  padding: 20px;
+}
+
+/* Style for individual PatientDetails */
+.Patient-details {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;  /* Full width on small screens */
+  max-width: 350px; /* Limit width to ensure it doesn’t stretch too far */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Space between each item */
+  transition: transform 0.3s ease;
+}
+
+.Patient-details:hover {
+  transform: translateY(-5px); /* Small hover effect */
+}
+
+.Patient-details h4 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.Patient-details p {
+  font-size: 16px;
+  color: #555;
+  margin: 8px 0;
+}
+
+.Patient-details strong {
+  color: #333;
+  font-weight: bold;
+}
+
+.Patient-details button {
+  background-color: #ff4d4d;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.Patient-details button:hover {
+  background-color: #e60000;
+}
+
+.Patient-details .edit-btn {
+  background-color: #4d94ff;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.Patient-details .edit-btn:hover {
+  background-color: #3381e3;
+}
+
+.Patient-details .delete-btn {
+  margin-right: 10px;
+}
+
+.Patient-details p:last-child {
+  margin-bottom: 0;
+}
+
+.Patient-details .created-at {
+  font-size: 14px;
+  color: #888;
+}
+.patients-search-page {
+  padding: 20px;
+}
+
+.search-input {
+  padding: 10px;
+  margin-right: 10px;
+  width: 200px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+.patient-results {
+  margin-top: 20px;
+}
+
+.patient-details {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.edit-btn {
+  color: blue;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.edit-btn:hover {
+  text-decoration: underline;
+}
+
+/* General Container Styling */
+.create {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.create h3 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.create label {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+  color: #333;
+}
+
+/* Input Field Styling */
+.create input,
+.create select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+/* Styling for the error states */
+.create input.error,
+.create select.error {
+  border-color: #f44336;
+  background-color: #ffebee;
+}
+
+/* Input focus effects */
+.create input:focus,
+.create select:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+/* Button Styling */
+.create button {
+  background-color: #007BFF;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.create button:hover {
+  background-color: #0056b3;
+}
+
+/* Error Message Styling */
+.create .error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 600px) {
+  .create {
+    padding: 15px;
+  }
+
+  .create h3 {
+    font-size: 1.5em;
+  }
+
+  .create button {
+    font-size: 1em;
+  }
+}
+/* General Home Page Container */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f4f7fa;
+}
+
+.Patients {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+}
+
+/* Patient Form Styling */
+.create {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.create h3 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.create label {
+  font-size: 1em;
+  font-weight: bold;
+  color: #333;
+}
+
+.create input,
+.create select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.create input.error,
+.create select.error {
+  border-color: #f44336;
+  background-color: #ffebee;
+}
+
+.create button {
+  background-color: #007BFF;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.create button:hover {
+  background-color: #0056b3;
+}
+
+.create .error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* PatientDoughnutChart and Patient Details Container */
+.Patients {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Doughnut Chart Styling */
+.patient-doughnut-chart {
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .home {
+    padding: 15px;
+  }
+
+  .Patients {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  /* Stack the form and chart vertically on small screens */
+  .patient-doughnut-chart {
+    margin-top: 20px;
+    width: 100%;
+    height: 300px;
+  }
+
+  /* Responsive form for smaller screens */
+  .create {
+    padding: 15px;
+    max-width: 100%;
+  }
+
+  .create h3 {
+    font-size: 1.5em;
+  }
+
+  .create button {
+    font-size: 1em;
+  }
+}
+/* General Page Styling */
+.view-all-patients {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  background-color: #f4f7fa;
+  min-height: 100vh;
+}
+
+.view-all-patients h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Flex Container for Patient Details */
+.patient-list {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping of patient cards */
+  justify-content: center; /* Center the cards horizontally */
+  gap: 20px; /* Add space between the cards */
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Individual Patient Details Card */
+.Patient-details {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 20px); /* Makes 3 columns on large screens */
+  min-width: 280px;
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for patient cards */
+.Patient-details:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Styling for Patient Name and Other Details */
+.Patient-details h4 {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.Patient-details p {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.Patient-details button {
+  background-color: #ff6347;
+  color: white;
+  padding: 8px 16px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.Patient-details button:hover {
+  background-color: #e55347;
+}
+
+.Patient-details .edit-btn {
+  background-color: #007bff;
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 1em;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.Patient-details .edit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  /* Stacks patient cards into a single column on small screens */
+  .Patient-details {
+    width: 100%;
+  }
+
+  .view-all-patients h2 {
+    font-size: 1.8rem;
+  }
+}
+/* Navbar Styling */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Links */
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0 15px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Navbar Link Hover Effect */
+nav a:hover {
+  background-color: #FF4081;  /* Bright pink background */
+  color: #fff;  /* White text on hover */
+  transform: scale(1.05);  /* Slight scaling effect */
+}
+
+/* Navbar Button Styling (if you want a button instead of a link) */
+.navbar-button {
+  background-color: #FF4081;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar-button:hover {
+  background-color: #e91e63;
+  transform: scale(1.05);
+}
+/* Main container for the page */
+.patients-search-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f7f7f7;
+  min-height: 100vh;
+}
+
+/* Heading style */
+.patients-search-page h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form styling */
+.patients-search-page form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 1rem;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+/* Loading and error message styling */
+.patients-search-page p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.error-message {
+  color: red;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Patient results section */
+.patient-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Style for each patient detail card */
+.patient-results .patient-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 750px;
+}
+
+.patient-details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.patient-details p {
+  font-size: 1rem;
+  color: #333;
+}
+/* PatientList.css */
+
+/* General container for the patient list */
+.patient-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Each patient item */
+.patient-item {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect for patient items */
+.patient-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Link styling inside the patient item */
+.view-details-btn {
+  text-decoration: none;
+  color: #333;
+}
+
+.view-details-btn h4 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.view-details-btn p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Making sure text is styled */
+.view-details-btn h4, .view-details-btn p {
+  margin: 0;
+}
+/* src/pages/EditPatientPage.css */
+.edit-patient-page {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button.form-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.form-button:hover {
+  background-color: #45a049;
+}
+
+.error-message {
+  color: red;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.back-link {
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #007bff;
+}
