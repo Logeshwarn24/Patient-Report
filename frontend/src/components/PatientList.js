@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import GenderAgeBarChart from './GenderAgeBarChart';
 
 const PatientList = ({ patients }) => {
   return (
@@ -16,7 +15,6 @@ const PatientList = ({ patients }) => {
           </div>
         ))
       )}
-      <GenderAgeBarChart patients={patients}/>
     </div>
   );
 };

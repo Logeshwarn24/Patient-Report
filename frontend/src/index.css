@@ -301,7 +301,7 @@ select.error option {
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
   .charts-container {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .chart {
@@ -1308,4 +1308,94 @@ button.form-button:hover {
   margin-top: 20px;
   text-decoration: none;
   color: #007bff;
+}
+/* Container for the PatientList component */
+.patient-list {
+  margin-top: 20px;
+}
+
+/* Styling for individual patient cards */
+.patient-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for individual patient item */
+.patient-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Patient name and age styling */
+.patient-info {
+  font-size: 18px;
+  color: #333;
+}
+
+/* Gender icon or text styling */
+.patient-gender {
+  font-weight: bold;
+  color: #666;
+}
+
+/* Styling for patient action buttons (if you have actions like delete or edit) */
+.patient-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Action buttons */
+.patient-actions button {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.patient-actions button:hover {
+  background-color: #007BFF;
+  color: white;
+}
+/* Container for the entire ViewAllPatientsPage */
+.view-all-patients {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title heading */
+.view-all-patients h2 {
+  text-align: center;
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Message when no patients are found */
+.view-all-patients p {
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+}
+.Patients button{
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: rgb(12, 153, 209);
+  color: black;
+  border: none;
+  cursor: pointer;
+  font-size: large;
 }

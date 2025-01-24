@@ -1,5 +1,5 @@
 import { Bar } from 'react-chartjs-2';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 
 ChartJS.register(
@@ -39,15 +39,15 @@ const GenderAgeBarChart = ({ patients }) => {
     ],
   });
 
-  // Function to process patients' data and categorize them by age and gender
-  const processData = () => {
+  // Memoize the processData function with useCallback to prevent it from being recreated every render
+  const processData = useCallback(() => {
     const maleCounts = [0, 0, 0, 0]; // Male counts for age groups
     const femaleCounts = [0, 0, 0, 0]; // Female counts for age groups
     const otherCounts = [0, 0, 0, 0]; // Other gender counts for age groups
 
     patients.forEach(patient => {
       const age = patient.age;
-      const gender = patient.gender;
+      const gender = patient.gender.toLowerCase();  // Ensure it's case-insensitive
 
       // Determine the age group and increment the corresponding gender count
       if (age >= 0 && age <= 18) {
@@ -90,13 +90,19 @@ const GenderAgeBarChart = ({ patients }) => {
         {
           label: 'Other',
           data: otherCounts, // Other gender counts for each age group
-          backgroundColor: '#32CD32',
+          backgroundColor: '#32CD32', // Green for Other
           borderColor: '#32CD32',
           borderWidth: 1,
         },
       ],
     });
-  };
+  }, [patients]); // Ensure this effect runs when `patients` change
+
+  useEffect(() => {
+    if (patients && patients.length > 0) {
+      processData();
+    }
+  }, [patients, processData]); // Add `processData` here to avoid the warning
 
   const chartOptions = {
     responsive: true,
@@ -137,12 +143,6 @@ const GenderAgeBarChart = ({ patients }) => {
       intersect: true,
     },
   };
-
-  useEffect(() => {
-    if (patients && patients.length > 0) {
-      processData();
-    }
-  }, [patients]); // Re-run when patients data changes
 
   return (
     <div className="chart-container">
