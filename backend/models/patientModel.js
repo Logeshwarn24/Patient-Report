@@ -31,6 +31,18 @@ const patientSchema = new Schema({
     type: String,
     required: true
   },
+  weight:{
+    type: Number,
+    required: true
+  },
+  height: {
+    type: Number,
+    required: true
+  },
+  emergencyservice: {
+    type: String,
+    required: true
+  },
   user_id: {
     type: String,
     required: true

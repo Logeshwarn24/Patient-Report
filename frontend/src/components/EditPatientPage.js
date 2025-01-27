@@ -17,6 +17,9 @@ const EditPatientPage = () => {
   const [disease, setDisease] = useState('');
   const [bloodgroup, SetBlood_Group] = useState('');
   const [specialist, setSpecialist] = useState('General');
+  const [emergencyservice, setEmergencyService] = useState('No');
+  const [height, setHeight] = useState('')
+  const [weight, setWeight] = useState('')
   const [error, setError] = useState(null);
   const [emptyFields, setEmptyFields] = useState([]);
 
@@ -31,6 +34,9 @@ const EditPatientPage = () => {
       setDisease(patientToEdit.disease);
       SetBlood_Group(patientToEdit.bloodgroup);
       setSpecialist(patientToEdit.specialist);
+      setWeight(patientToEdit.weight)
+      setHeight(patientToEdit.height)
+      setEmergencyService(patientToEdit.emergencyservice)
     }
   }, [id, Patients]);
 
@@ -44,7 +50,7 @@ const EditPatientPage = () => {
     }
 
     // Create a patient object
-    const Patient = { name, age, gender, place, disease, bloodgroup, specialist };
+    const Patient = { name, age, gender, place, disease, bloodgroup, specialist, height, weight, emergencyservice };
 
     // Send the PATCH request to update the patient
     const response = await fetch(`/api/patients/${id}`, {
@@ -102,7 +108,32 @@ const EditPatientPage = () => {
         <option value="female">Female</option>
         <option value="other">Other</option>
       </select>
-
+      
+      <label>Patient Weight: </label>
+      <input 
+        type="number" 
+        onChange={(e) => setWeight(e.target.value)} 
+        value={weight}
+        className={emptyFields.includes('weight') ? 'error' : ''}
+      />      
+      <label>Patient Height: </label>
+      <input 
+        type="number" 
+        onChange={(e) => setHeight(e.target.value)} 
+        value={height}
+        className={emptyFields.includes('height') ? 'error' : ''}
+      />      
+      <label>Emergency Service</label>
+      <select
+        name="emergencyservice"
+        value={emergencyservice}
+        onChange={(e) => setEmergencyService(e.target.value)}
+        className={emptyFields.includes('emergencyservice') ? 'error' : ''}
+      >
+        <option value="No">NO</option>
+        <option value="Yes, pre-arrival by bystander">Yes-pre-arrival by bystander</option>
+        <option value="Yes, on-arrival by emergency service">Yes, on-arrival by emergency service</option>
+      </select><br></br><br></br>
       <label>Patient Place: </label>
       <input
         type="text"

@@ -11,6 +11,9 @@ const PatientForm = () => {
   const [disease, setDisease] = useState('')
   const [bloodgroup, SetBlood_Group] = useState(' ');
   const [specialist, setSpecialist] = useState('General')
+  const [emergencyservice, setEmergencyService] = useState('No');
+  const [height, setHeight] = useState('')
+  const [weight, setWeight] = useState('')
   const [error, setError] = useState(null)
   const [emptyFields, setEmptyFields] = useState([])
 
@@ -20,7 +23,7 @@ const PatientForm = () => {
       setError('You must be logged in')
       return
     }
-    const Patient = {name, age, gender, place, disease, bloodgroup, specialist}
+    const Patient = {name, age, gender, place, disease, bloodgroup, specialist, height, weight, emergencyservice}
     
     const response = await fetch('/api/patients', {
       method: 'POST',
@@ -47,6 +50,9 @@ const PatientForm = () => {
       setDisease('')
       SetBlood_Group('')
       setSpecialist('')
+      setWeight('')
+      setHeight('')
+      setEmergencyService('')
       console.log('new patient added', json)
       dispatch({type: 'CREATE_PATIENT', payload: json})
     }
@@ -82,6 +88,32 @@ const PatientForm = () => {
         <option value="male">Male</option>
         <option value="female">Female</option>
         <option value="other">Other</option>
+      </select><br></br><br></br>
+      
+      <label>Patient Weight: </label>
+      <input 
+        type="number" 
+        onChange={(e) => setWeight(e.target.value)} 
+        value={weight}
+        className={emptyFields.includes('weight') ? 'error' : ''}
+      />      
+      <label>Patient Height: </label>
+      <input 
+        type="number" 
+        onChange={(e) => setHeight(e.target.value)} 
+        value={height}
+        className={emptyFields.includes('height') ? 'error' : ''}
+      />      
+      <label>Emergency Service</label>
+      <select
+        name="emergencyservice"
+        value={emergencyservice}
+        onChange={(e) => setEmergencyService(e.target.value)}
+        className={emptyFields.includes('emergencyservice') ? 'error' : ''}
+      >
+        <option value="No">NO</option>
+        <option value="Yes, pre-arrival by bystander">Yes-pre-arrival by bystander</option>
+        <option value="Yes, on-arrival by emergency service">Yes, on-arrival by emergency service</option>
       </select><br></br><br></br>
       <label>Patient Place: </label>
       <input 

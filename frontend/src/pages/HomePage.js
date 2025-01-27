@@ -6,6 +6,7 @@ import PatientForm from "../components/PatientForm";
 import PatientDoughnutChart from "../components/PatientDoughnutChart";
 import PatientLineChart from "../components/PatientLineChart";
 import GenderAgeBarChart from "../components/GenderAgeBarChart";
+import PatientRadarChart from "../components/PatientRadarChart";
 
 const HomePage = () => {
   const { Patients, dispatch } = usePatientsContext(); // Get patients from context
@@ -52,6 +53,7 @@ const HomePage = () => {
         {Patients && <PatientDoughnutChart patients={Patients} />}
         <PatientLineChart patients={Patients} />
         <GenderAgeBarChart patients={Patients}/>
+        <PatientRadarChart patients={Patients}/>
       </div>
     </div>
   );

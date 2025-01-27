@@ -1,4 +1,4 @@
-const Patient = require('../models/PatientModel');
+const Patient = require('./../models/patientModel');
 const mongoose = require('mongoose');
 
 // Ensure that only logged-in users can perform actions
@@ -33,7 +33,7 @@ const getPatient = async (req, res) => {
 };
 
 const createPatient = async (req, res) => {
-  const { name, age, gender, place, disease, bloodgroup, specialist } = req.body;
+  const { name, age, gender, place, disease, bloodgroup, specialist, weight, height, emergencyservice } = req.body;
 
   let emptyFields = [];
   if (!name) emptyFields.push('name');
@@ -43,6 +43,9 @@ const createPatient = async (req, res) => {
   if (!disease) emptyFields.push('disease');
   if (!bloodgroup) emptyFields.push('bloodgroup');
   if (!specialist) emptyFields.push('specialist');
+  if (!weight) emptyFields.push('weight');
+  if (!height) emptyFields.push('height');
+  if (!emergencyservice) emptyFields.push('emergencyservice');
 
   if (emptyFields.length > 0) {
     return res.status(400).json({ error: 'Please fill in all fields', emptyFields });
@@ -64,6 +67,9 @@ const createPatient = async (req, res) => {
       disease,
       bloodgroup,
       specialist,
+      height,
+      weight,
+      emergencyservice,
       user_id,
     });
 

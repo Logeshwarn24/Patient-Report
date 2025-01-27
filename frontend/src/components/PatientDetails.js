@@ -37,6 +37,9 @@ const PatientDetails = () => {
       <h4>Name: {patient.name}</h4>
       <p><strong>Age: </strong>{patient.age}</p>
       <p><strong>Gender: </strong>{patient.gender}</p>
+      <p><strong>Patient Weight: </strong>{patient.weight} KG</p>
+      <p><strong>Patient Height: </strong>{patient.height} CM</p>
+      <p><strong>Emergency Service: </strong>{patient.emergencyservice || 'NO'}</p>
       <p><strong>Place: </strong>{patient.place}</p>
       <p><strong>Disease: </strong>{patient.disease}</p>
       <p><strong>Blood Group: </strong>{patient.bloodgroup}</p>
