@@ -36,10 +36,10 @@ userSchema.statics.signup = async function(email, password) {
     throw Error('Email already in use')
   }
 
-  const salt = await bcrypt.genSalt(10)
-  const hash = await bcrypt.hash(password, salt)
+  const salt = await bcrypt.genSalt(10)//encryption method of process
+  const hash = await bcrypt.hash(password, salt)// get using the encryption seprated id unique
 
-  const user = await this.create({ email, password: hash })
+  const user = await this.create({ email, password: hash })//create password of email with encryption data
 
   return user
 }
@@ -56,7 +56,7 @@ userSchema.statics.login = async function(email, password) {
     throw Error('Incorrect email')
   }
 
-  const match = await bcrypt.compare(password, user.password)
+  const match = await bcrypt.compare(password, user.password) //login email compare matching email and password data
   if (!match) {
     throw Error('Incorrect password')
   }
