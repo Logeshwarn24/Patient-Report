@@ -1,8 +1,6 @@
 const Patient = require('./../models/patientModel');
 const mongoose = require('mongoose');
 
-// Ensure that only logged-in users can perform actions
-const checkUserAuth = (req) => req.user && req.user._id;
 
 const getPatients = async (req, res) => {
   const user_id = req.user._id;
