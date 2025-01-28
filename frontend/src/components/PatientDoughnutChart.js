@@ -1,10 +1,12 @@
 import { Doughnut } from 'react-chartjs-2';
 import { useEffect, useState } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { usePatientsContext } from '../hooks/usePatientsContext';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const PatientDoughnutChart = ({patients}) => {
+const PatientDoughnutChart = () => {
+  const { Patients} = usePatientsContext(); // Get patients from context
   const [chartData, setChartData] = useState({
     labels: ['Age 0-18', 'Age 19-35', 'Age 36-50', 'Age 51+'],
     datasets: [
@@ -21,7 +23,7 @@ const PatientDoughnutChart = ({patients}) => {
   const processData = () => {
     const ageGroups = [0, 0, 0, 0]; // [Age 0-18, Age 19-35, Age 36-50, Age 51+]
     
-    patients.forEach(patient => {
+    Patients.forEach(patient => {
       const age = patient.age;
 
       if (age >= 0 && age <= 18) ageGroups[0]++;
@@ -67,10 +69,10 @@ const PatientDoughnutChart = ({patients}) => {
   };
   useEffect(() => {
     // Only process data if we have patients
-    if (patients && patients.length > 0) {
+    if (Patients && Patients.length > 0) {
       processData();
     }
-  }, [patients]); // Re-run when patients data changes
+  }, [Patients]); // Re-run when patients data changes
 
   return (
     <div className="chart-container">

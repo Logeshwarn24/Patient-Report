@@ -21,9 +21,6 @@ const Navbar = () => {
           {user ? (
             <div>
               <span>{user.email}</span>
-              <Link to="/view-all-patients">View All Patients</Link>
-              <Link to="/patients/search">Search Patients</Link>
-              <Link to="/">HomePage</Link>
               <button onClick={handleClick}>Logout</button>
             </div>
           ) : (

@@ -1,6 +1,7 @@
 import { Line } from 'react-chartjs-2';
 import { useEffect, useState } from 'react';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
+import { usePatientsContext } from '../hooks/usePatientsContext';
 
 ChartJS.register(
   CategoryScale, 
@@ -12,7 +13,8 @@ ChartJS.register(
   Legend
 );
 
-const PatientLineChart = ({ patients }) => {
+const PatientLineChart = () => {
+  const { Patients} = usePatientsContext(); // Get patients from context
   const [chartData, setChartData] = useState({
     labels: [], // Time (dates)
     datasets: [
@@ -28,7 +30,7 @@ const PatientLineChart = ({ patients }) => {
 
   // Function to process patients data and format it for the line chart
   const processData = () => {
-    const sortedPatients = [...patients].sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt)); // Sort by created date
+    const sortedPatients = [...Patients].sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt)); // Sort by created date
 
     const labels = sortedPatients.map((patient) => new Date(patient.createdAt).toLocaleDateString()); // X-axis: dates of registration
     const ages = sortedPatients.map((patient) => patient.age); // Y-axis: corresponding ages
@@ -90,10 +92,10 @@ const PatientLineChart = ({ patients }) => {
   };
 
   useEffect(() => {
-    if (patients && patients.length > 0) {
+    if (Patients && Patients.length > 0) {
       processData();
     }
-  }, [patients]); // Re-run when patients data changes
+  }, [Patients]); // Re-run when patients data changes
 
   return (
     <div className="chart-container">

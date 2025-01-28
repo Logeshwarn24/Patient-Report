@@ -1,6 +1,7 @@
 import { Bar } from 'react-chartjs-2';
 import { useEffect, useState, useCallback } from 'react';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import { usePatientsContext } from '../hooks/usePatientsContext';
 
 ChartJS.register(
   CategoryScale,
@@ -11,7 +12,8 @@ ChartJS.register(
   Legend
 );
 
-const GenderAgeBarChart = ({ patients }) => {
+const GenderAgeBarChart = () => {
+  const { Patients } = usePatientsContext(); // Get patients from context
   const [chartData, setChartData] = useState({
     labels: ['0-18', '19-35', '36-50', '51+'], // Age ranges for X-axis
     datasets: [
@@ -45,7 +47,7 @@ const GenderAgeBarChart = ({ patients }) => {
     const femaleCounts = [0, 0, 0, 0]; // Female counts for age groups
     const otherCounts = [0, 0, 0, 0]; // Other gender counts for age groups
 
-    patients.forEach(patient => {
+    Patients.forEach(patient => {
       const age = patient.age;
       const gender = patient.gender.toLowerCase();  // Ensure it's case-insensitive
 
@@ -96,13 +98,13 @@ const GenderAgeBarChart = ({ patients }) => {
         },
       ],
     });
-  }, [patients]); // Ensure this effect runs when `patients` change
+  }, [Patients]); // Ensure this effect runs when `patients` change
 
   useEffect(() => {
-    if (patients && patients.length > 0) {
+    if (Patients && Patients.length > 0) {
       processData();
     }
-  }, [patients, processData]); // Add `processData` here to avoid the warning
+  }, [Patients, processData]); // Add `processData` here to avoid the warning
 
   const chartOptions = {
     responsive: true,

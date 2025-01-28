@@ -48,12 +48,7 @@ const HomePage = () => {
 
         {/* Conditionally render the PatientForm based on isFormVisible state */}
         {isFormVisible && <PatientForm />}
-
-        {/* Optional charts */}
-        {Patients && <PatientDoughnutChart patients={Patients} />}
-        <PatientLineChart patients={Patients} />
-        <GenderAgeBarChart patients={Patients}/>
-        <PatientRadarChart patients={Patients}/>
+        <p className="theme">"To care for those who once cared for us is one of the highest honors."</p>
       </div>
     </div>
   );

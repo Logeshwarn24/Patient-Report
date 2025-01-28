@@ -9,10 +9,12 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+import { usePatientsContext } from '../hooks/usePatientsContext';
 
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
-const PatientRadarChart = ({ patients }) => {
+const PatientRadarChart = () => {
+  const { Patients} = usePatientsContext(); // Get patients from context
   const [chartData, setChartData] = useState({
     labels: [], // Labels for Radar Chart (Emergency States)
     datasets: [
@@ -29,7 +31,7 @@ const PatientRadarChart = ({ patients }) => {
   // Function to process patient data for the Radar Chart
   const processData = () => {
     // Group patients by `emergencyservice` states
-    const emergencyGroups = patients.reduce((acc, patient) => {
+    const emergencyGroups = Patients.reduce((acc, patient) => {
       const state = patient.emergencyservice || 'No';
       if (!acc[state]) {
         acc[state] = { totalAge: 0, count: 0 };
@@ -97,14 +99,14 @@ const PatientRadarChart = ({ patients }) => {
   };
 
   useEffect(() => {
-    if (patients && patients.length > 0) {
+    if (Patients && Patients.length > 0) {
       processData();
     }
-  }, [patients]); // Re-run when patients data changes
+  }, [Patients]); // Re-run when patients data changes
 
   return (
     <div className="chart-container">
-      <h2>Radar Chart: Patient Age by Emergency State</h2>
+      <h2>Patient Age by Emergency State</h2>
       <Radar data={chartData} options={chartOptions} />
     </div>
   );
