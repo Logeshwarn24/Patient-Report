@@ -3,13 +3,8 @@ import { usePatientsContext } from "../hooks/usePatientsContext";
 import { useAuthContext } from "../hooks/useAuthContext";
 // components
 import PatientForm from "../components/PatientForm";
-import PatientDoughnutChart from "../components/PatientDoughnutChart";
-import PatientLineChart from "../components/PatientLineChart";
-import GenderAgeBarChart from "../components/GenderAgeBarChart";
-import PatientRadarChart from "../components/PatientRadarChart";
-
 const HomePage = () => {
-  const { Patients, dispatch } = usePatientsContext(); // Get patients from context
+  const { dispatch } = usePatientsContext(); // Get patients from context
   const { user } = useAuthContext(); // Get user from context
   const [isFormVisible, setIsFormVisible] = useState(false); // State to toggle the visibility of the form
 
