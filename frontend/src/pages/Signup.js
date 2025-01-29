@@ -20,12 +20,14 @@ const Signup = () => {
         type="email" 
         onChange={(e) => setEmail(e.target.value)} 
         value={email} 
+        placeholder="Enter the Staff id"
       />
       <label>Password:</label>
       <input 
         type="password" 
         onChange={(e) => setPassword(e.target.value)} 
         value={password} 
+        placeholder="Enter the Password"
       />
       <button disabled={isLoading}>Sign up</button>
       {error && <div className="error">{error}</div>}
