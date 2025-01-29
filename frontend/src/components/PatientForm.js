@@ -69,6 +69,7 @@ const PatientForm = () => {
         onChange={(e) => setName(e.target.value)} 
         value={name}
         className={emptyFields.includes('name') ? 'error' : ''}
+        placeholder='Enter the patient name'
       />
       <label>Patient Age: </label>
       <input 
@@ -76,6 +77,7 @@ const PatientForm = () => {
         onChange={(e) => setAge(e.target.value)} 
         value={age}
         className={emptyFields.includes('age') ? 'error' : ''}
+        placeholder='Enter the patient age'
       />      
       
       <label>Patient Gender</label>
@@ -84,6 +86,7 @@ const PatientForm = () => {
         value={gender}
         onChange={(e) => setGender(e.target.value)}
         className={emptyFields.includes('gender') ? 'error' : ''}
+        placeholder='Enter the patient gender'
       >
         <option value="male">Male</option>
         <option value="female">Female</option>
@@ -96,6 +99,7 @@ const PatientForm = () => {
         onChange={(e) => setWeight(e.target.value)} 
         value={weight}
         className={emptyFields.includes('weight') ? 'error' : ''}
+        placeholder='Enter the patient weight'
       />      
       <label>Patient Height: </label>
       <input 
@@ -103,6 +107,7 @@ const PatientForm = () => {
         onChange={(e) => setHeight(e.target.value)} 
         value={height}
         className={emptyFields.includes('height') ? 'error' : ''}
+        placeholder='Enter the patient height'
       />      
       <label>Emergency Service</label>
       <select
@@ -110,6 +115,7 @@ const PatientForm = () => {
         value={emergencyservice}
         onChange={(e) => setEmergencyService(e.target.value)}
         className={emptyFields.includes('emergencyservice') ? 'error' : ''}
+        placeholder='Enter the patient emergencyservice'
       >
         <option value="No">NO</option>
         <option value="Yes, pre-arrival by bystander">Yes-pre-arrival by bystander</option>
@@ -121,6 +127,7 @@ const PatientForm = () => {
         onChange={(e) => setPlace(e.target.value)} 
         value={place}
         className={emptyFields.includes('place') ? 'error' : ''}
+        placeholder='Enter the patient address'
       />
       <label>Patient Disease: </label>
       <input 
@@ -128,6 +135,7 @@ const PatientForm = () => {
         onChange={(e) => setDisease(e.target.value)} 
         value={disease}
         className={emptyFields.includes('disease') ? 'error' : ''}
+        placeholder='Enter the patient disease'
       />
       
       <label>Blood_Group: </label>
@@ -136,6 +144,7 @@ const PatientForm = () => {
         onChange={(e) => SetBlood_Group(e.target.value)} 
         value={bloodgroup}
         className={emptyFields.includes('bloodgroup') ? 'error' : ''}
+        placeholder='Enter the patient bloodgroup'
       />
       <br></br>
       <label>Specialist</label>
@@ -144,6 +153,7 @@ const PatientForm = () => {
         value={specialist}
         onChange={(e)=> setSpecialist(e.target.value)}
         className={emptyFields.includes('specialist') ? 'error' : ''}
+        placeholder='Enter the specialist'
       >
         <option value="General">General</option>
         <option value="Cardiologist">Cardiologist</option>
