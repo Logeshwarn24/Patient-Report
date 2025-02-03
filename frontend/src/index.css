@@ -1531,7 +1531,6 @@ button:hover {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 .main-content{
-  background-image: url('https://media.istockphoto.com/id/1053085842/photo/waiting-area-in-hospital.jpg?s=612x612&w=0&k=20&c=kQIpMSrqTBNbxmImVxHoW0Ai3PnHiQffDOdTqe_KMMc=');
   background-size: cover;
   background-position: center center;
   height: 100vh;
@@ -1542,3 +1541,25 @@ button:hover {
   font-size: large;
   font-weight: bold;
 }
+/* Main content with moving background image */
+.main-content {
+  background-image: url("C:\Users\LOGESHWARAN\Desktop\Patient\frontend\public\beds-medical-equipment-stand-out-with-soothing-blue-tones-hospital-room.jpg"); /* New hospital image */
+  background-size: cover;
+  background-position: center center;
+  height: 100vh; /* Set to desired height */
+  animation: moveBackground 30s linear infinite;
+}
+
+/* Keyframes for the moving background effect */
+@keyframes moveBackground {
+  0% {
+    background-position: center center;
+  }
+  50% {
+    background-position: right top; /* Moves to the top-right corner */
+  }
+  100% {
+    background-position: center center; /* Returns to the center */
+  }
+}
+
