@@ -17,7 +17,6 @@ body {
   font-family: 'Poppins', sans-serif;
   color: var(--secondary);
   line-height: 1.6;
-  background-image: url(C:\Users\LOGESHWARAN\Desktop\Patient\frontend\public\medical-character-vector-illustration-doctor-260nw-1714882885.webp);
 }
 
 header {
@@ -28,7 +27,7 @@ header {
 header .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -830,7 +829,6 @@ nav form button:hover {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background-color: #f4f7fa;
 }
 
 .Patients {
@@ -1072,6 +1070,7 @@ nav {
   padding: 5px;
   background-color: #fff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 /* Navbar Links */
@@ -1413,6 +1412,7 @@ button.form-button:hover {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  border-radius: 10px;
 }
 
 .sidebar nav ul {
@@ -1450,6 +1450,7 @@ header {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
   z-index: 100;
+  border-radius: 10px;
 }
 
 header .container {
@@ -1480,6 +1481,24 @@ header button:hover {
 .pages {
   padding: 20px;
   overflow-y: auto;
+}
+.pages {
+  padding: 20px;
+  overflow-y: scroll; /* Enable vertical scrolling */
+  scrollbar-width: thin; /* For Firefox: makes the scrollbar thinner */
+  scrollbar-color: transparent transparent; /* For Firefox: hides the scrollbar */
+}
+
+.pages::-webkit-scrollbar {
+  width: 0px; /* Hide the scrollbar width for WebKit browsers */
+}
+
+.pages::-webkit-scrollbar-thumb {
+  background: transparent; /* Hide the scrollbar thumb */
+}
+
+.pages::-webkit-scrollbar-track {
+  background: transparent; /* Hide the scrollbar track */
 }
 
 button {
@@ -1512,7 +1531,10 @@ button:hover {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 .main-content{
-  background-image: url('C:\Users\LOGESHWARAN\Desktop\Patient\frontend\public\images.jpeg');
+  background-image: url('https://media.istockphoto.com/id/1053085842/photo/waiting-area-in-hospital.jpg?s=612x612&w=0&k=20&c=kQIpMSrqTBNbxmImVxHoW0Ai3PnHiQffDOdTqe_KMMc=');
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
 }
 .theme{
   color: solid black;

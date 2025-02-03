@@ -59,7 +59,7 @@ const PatientsSearchPage = () => {
       <form onSubmit={handleSearchSubmit}>
         <input
           type="text"
-          placeholder="Enter patient name"
+          placeholder="Type the name of patient..."
           value={searchQuery}
           onChange={handleSearchChange}
           className="search-input"
