@@ -13,12 +13,15 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
+  },
+  isAdmin: {
+    type: Boolean,
+    default: false // Default to false for regular users
   }
 })
 
 // static signup method
-userSchema.statics.signup = async function(email, password) {
-
+userSchema.statics.signup = async function(email, password, isAdmin = false) {
   // validation
   if (!email || !password) {
     throw Error('All fields must be filled')
@@ -36,17 +39,16 @@ userSchema.statics.signup = async function(email, password) {
     throw Error('Email already in use')
   }
 
-  const salt = await bcrypt.genSalt(10)//encryption method of process
-  const hash = await bcrypt.hash(password, salt)// get using the encryption seprated id unique
+  const salt = await bcrypt.genSalt(10)
+  const hash = await bcrypt.hash(password, salt)
 
-  const user = await this.create({ email, password: hash })//create password of email with encryption data
+  const user = await this.create({ email, password: hash, isAdmin })
 
   return user
 }
 
 // static login method
 userSchema.statics.login = async function(email, password) {
-
   if (!email || !password) {
     throw Error('All fields must be filled')
   }
@@ -56,7 +58,7 @@ userSchema.statics.login = async function(email, password) {
     throw Error('Incorrect email')
   }
 
-  const match = await bcrypt.compare(password, user.password) //login email compare matching email and password data
+  const match = await bcrypt.compare(password, user.password)
   if (!match) {
     throw Error('Incorrect password')
   }
