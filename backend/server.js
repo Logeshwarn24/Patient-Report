@@ -19,13 +19,6 @@ app.use((req, res, next) => {
   console.log(req.path, req.method)
   next()
 })
-// Serve Frontend Files (Ensure path is correct)
-const frontendPath = path.join(__dirname, "../frontend/");
-app.use(express.static(frontendPath));
-
-app.get("/", (req, res) => {
-    res.sendFile(path.join(frontendPath, "index.js"));
-});
 
 // routes
 app.use('/api/user', userRoutes)
@@ -35,6 +28,13 @@ app.use('/api/patients', patientRoutes)
 app.use('/api/admin', requireAuth, adminAuth, (req, res) => {
   res.send('Admin access granted')
 })
+// Serve Frontend Files (Ensure path is correct)
+const frontendPath = path.join(__dirname, "../frontend/");
+app.use(express.static(frontendPath));
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(frontendPath, "index.js"));
+});
 
 // connect to db
 mongoose.connect(process.env.MONGO_URI)
