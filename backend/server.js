@@ -29,7 +29,7 @@ app.use('/api/admin', requireAuth, adminAuth, (req, res) => {
   res.send('Admin access granted')
 })
 // Serve Frontend Files (Ensure path is correct)
-const frontendPath = path.join(__dirname, "../frontend/");
+const frontendPath = path.join(__dirname, "../frontend/src/");
 app.use(express.static(frontendPath));
 
 app.get("/", (req, res) => {
