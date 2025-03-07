@@ -1,4 +1,5 @@
 require('dotenv').config()
+const path = require('path')
 const express = require('express')
 const mongoose = require('mongoose')
 const patientRoutes = require('./routes/patients')
@@ -6,7 +7,6 @@ const userRoutes = require('./routes/user')
 const requireAuth = require('./middleware/requireAuth')
 const adminAuth = require('./middleware/adminAuth')
 const cors = require('cors')
-const path = require('path')
 // express app
 const app = express()
 
@@ -24,7 +24,7 @@ const frontendPath = path.join(__dirname, "../frontend/");
 app.use(express.static(frontendPath));
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(frontendPath, "App.js"));
+    res.sendFile(path.join(frontendPath, "index.js"));
 });
 
 // routes
