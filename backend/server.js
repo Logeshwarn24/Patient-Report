@@ -33,7 +33,7 @@ const frontendPath = path.join(__dirname, "../frontend/src/");
 app.use(express.static(frontendPath));
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(frontendPath, "index.js"));
+    res.sendFile(path.join(frontendPath, "App.js"));
 });
 
 // connect to db
