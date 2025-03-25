@@ -9,7 +9,7 @@ const PatientsSearchPage = () => {
   const [patients, setPatients] = useState([]);        // Patients state to store search results
   const [error, setError] = useState(null);             // Error state to handle empty search results or failed fetch
   const [loading, setLoading] = useState(false);        // Loading state to show a spinner or loading message during fetch
-
+  const api = process.env.BACKEND_URL
   const { user } = useAuthContext(); // Get the current logged-in user
   //const navigate = useNavigate();
 
@@ -30,7 +30,7 @@ const PatientsSearchPage = () => {
     setLoading(true);  // Set loading state to true when starting fetch
 
     try {
-      const response = await fetch(`/api/patients/search?name=${searchQuery}`, {
+      const response = await fetch(`${api}/api/patients/search?name=${searchQuery}`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
         },

@@ -16,6 +16,7 @@ const PatientForm = () => {
   const [weight, setWeight] = useState('')
   const [error, setError] = useState(null)
   const [emptyFields, setEmptyFields] = useState([])
+  const api = process.env.BACKEND_URL
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -25,7 +26,7 @@ const PatientForm = () => {
     }
     const Patient = {name, age, gender, place, disease, bloodgroup, specialist, height, weight, emergencyservice}
     
-    const response = await fetch('/api/patients', {
+    const response = await fetch(`${api}/api/patients`, {
       method: 'POST',
       body: JSON.stringify(Patient),
       headers: {

@@ -7,11 +7,12 @@ const HomePage = () => {
   const { dispatch } = usePatientsContext(); // Get patients from context
   const { user } = useAuthContext(); // Get user from context
   const [isFormVisible, setIsFormVisible] = useState(false); // State to toggle the visibility of the form
+  const api = process.env.BACKEND_URL
 
   // Fetch patients data when the page loads
   useEffect(() => {
     const fetchPatients = async () => {
-      const response = await fetch('/api/Patients', {
+      const response = await fetch(`${api}/api/Patients`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
         },

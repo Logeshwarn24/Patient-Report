@@ -22,6 +22,7 @@ const EditPatientPage = () => {
   const [weight, setWeight] = useState('')
   const [error, setError] = useState(null);
   const [emptyFields, setEmptyFields] = useState([]);
+  const api = process.env.BACKEND_URL
 
   // Load the patient data when editing
   useEffect(() => {
@@ -53,7 +54,7 @@ const EditPatientPage = () => {
     const Patient = { name, age, gender, place, disease, bloodgroup, specialist, height, weight, emergencyservice };
 
     // Send the PATCH request to update the patient
-    const response = await fetch(`/api/patients/${id}`, {
+    const response = await fetch(`${api}/api/patients/${id}`, {
       method: 'PATCH',
       body: JSON.stringify(Patient),
       headers: {
