@@ -12,7 +12,6 @@ const app = express()
 
 // middleware
 app.use(express.json())
-app.use(cors({ origin: "*" })); // ✅ Allow all origins for testing
 
 // middleware to log requests
 app.use((req, res, next) => {
@@ -28,13 +27,6 @@ app.use('/api/patients', patientRoutes)
 app.use('/api/admin', requireAuth, adminAuth, (req, res) => {
   res.send('Admin access granted')
 })
-// Serve Frontend Files (Ensure path is correct)
-const frontendPath = path.join(__dirname, "../frontend/src/");
-app.use(express.static(frontendPath));
-
-app.get("/", (req, res) => {
-    res.sendFile(path.join(frontendPath, "App.js"));
-});
 
 // connect to db
 mongoose.connect(process.env.MONGO_URI)
