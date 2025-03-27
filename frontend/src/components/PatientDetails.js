@@ -3,7 +3,6 @@ import { useAuthContext } from '../hooks/useAuthContext';
 import { useParams } from 'react-router-dom';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import { Link } from 'react-router-dom';
-const api = process.env.BACKEND_URL
 const PatientDetails = () => {
   const { id } = useParams(); // Retrieve the patient ID from the URL
   const { Patients, dispatch } = usePatientsContext(); // Get patients from context
@@ -19,7 +18,7 @@ const PatientDetails = () => {
   const handleClick = async () => {
     if (!user) return;
 
-    const response = await fetch(`${api}/api/patients/${patient._id}`, {
+    const response = await fetch(`/api/patients/${patient._id}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${user.token}`,
